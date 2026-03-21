@@ -2,12 +2,12 @@
 
 This service is intended to be deployed as a standalone Cloudflare Worker on:
 
-- `https://olauncher-licensing-service.elisonyang2024.workers.dev`
+- `https://liqunch-licensing-service.elisonyang2024.workers.dev`
 
 ## 1. Create the D1 database
 
 ```bash
-wrangler d1 create olauncher-licenses
+wrangler d1 create liqunch-licenses
 ```
 
 Copy the returned database ID into [`wrangler.toml`](./wrangler.toml).
@@ -15,7 +15,7 @@ Copy the returned database ID into [`wrangler.toml`](./wrangler.toml).
 ## 2. Apply the schema
 
 ```bash
-wrangler d1 execute olauncher-licenses --file=./migrations/0001_initial.sql
+wrangler d1 execute liqunch-licenses --file=./migrations/0001_initial.sql
 ```
 
 ## 3. Set real Paddle values
@@ -53,7 +53,7 @@ npm run deploy
 
 Point Paddle webhook delivery to:
 
-- `https://olauncher-licensing-service.elisonyang2024.workers.dev/api/paddle/webhooks`
+- `https://liqunch-licensing-service.elisonyang2024.workers.dev/api/paddle/webhooks`
 
 This endpoint now verifies the `Paddle-Signature` header against the raw request body before processing events.
 

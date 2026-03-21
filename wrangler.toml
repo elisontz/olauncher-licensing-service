@@ -1,10 +1,10 @@
-name = "olauncher-licensing-service"
+name = "liqunch-licensing-service"
 main = "src/index.ts"
 compatibility_date = "2026-03-19"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "olauncher-licenses"
+database_name = "liqunch-licenses"
 database_id = "c76b4486-4b66-4183-a786-ff39d0c7f3df"
 
 [vars]
@@ -12,7 +12,7 @@ LICENSE_KEY_PREFIX = "OL"
 PADDLE_SINGLE_PRICE_ID = "pri_01km5w6hdd1vwt1v7q79956msf"
 PADDLE_DOUBLE_PRICE_ID = "pri_01km5w8gnwp419323cdm63cg39"
 EMAIL_FROM_ADDRESS = "license@mail.tayueke.cn"
-EMAIL_FROM_NAME = "oLauncher"
+EMAIL_FROM_NAME = "Liqunch"
 EMAIL_REPLY_TO = "support@tayueke.cn"
 SUPPORT_EMAIL = "support@tayueke.cn"
 

@@ -118,17 +118,17 @@ test("builds an English-first purchase email with a Chinese supplementary sectio
     supportEmail: "support@example.com"
   });
 
-  assert.equal(email.subject, "Your oLauncher Pro License Key / oLauncher Pro 激活码");
-  assert.match(email.text, /^Hi, thank you for purchasing oLauncher Pro\./);
+  assert.equal(email.subject, "Your Liqunch Pro License Key / Liqunch Pro 激活码");
+  assert.match(email.text, /^Hi, thank you for purchasing Liqunch Pro\./);
   assert.match(email.text, /buyer@example\.com/);
   assert.match(email.text, /OL-1234-5678-ABCD/);
   assert.match(email.text, /Double-device/);
-  assert.match(email.text, /Open the oLauncher app/);
+  assert.match(email.text, /Open the Liqunch app/);
   assert.match(email.text, /\n中文补充\n/);
   assert.match(email.text, /双设备终身版/);
-  assert.match(email.text, /打开 oLauncher App/);
+  assert.match(email.text, /打开 Liqunch App/);
   assert.match(email.html, /OL-1234-5678-ABCD/);
-  assert.match(email.html, /<h2[^>]*>Your oLauncher Pro License Key<\/h2>/);
+  assert.match(email.html, /<h2[^>]*>Your Liqunch Pro License Key<\/h2>/);
   assert.match(email.html, /<h3[^>]*>Chinese Summary<\/h3>/);
   assert.match(email.html, /support@example\.com/);
 });
@@ -162,7 +162,7 @@ test("sends purchase email with SMTP2GO after license creation details are avail
     {
       SMTP2GO_API_KEY: "smtp2go_test_key",
       EMAIL_FROM_ADDRESS: "licenses@example.com",
-      EMAIL_FROM_NAME: "oLauncher",
+      EMAIL_FROM_NAME: "Liqunch",
       EMAIL_REPLY_TO: "help@example.com",
       SUPPORT_EMAIL: "support@example.com"
     } as never,
@@ -175,12 +175,12 @@ test("sends purchase email with SMTP2GO after license creation details are avail
   );
 
   assert.deepEqual(result, { attempted: true, delivered: true });
-  assert.equal(requestBody?.sender, "oLauncher <licenses@example.com>");
+  assert.equal(requestBody?.sender, "Liqunch <licenses@example.com>");
   assert.deepEqual(requestBody?.to, ["buyer@example.com"]);
   assert.deepEqual(requestBody?.reply_to, ["help@example.com"]);
-  assert.equal(requestBody?.subject, "Your oLauncher Pro License Key / oLauncher Pro 激活码");
+  assert.equal(requestBody?.subject, "Your Liqunch Pro License Key / Liqunch Pro 激活码");
   assert.match(String(requestBody?.text_body), /OL-1234-5678-ABCD/);
-  assert.match(String(requestBody?.text_body), /^Hi, thank you for purchasing oLauncher Pro\./);
+  assert.match(String(requestBody?.text_body), /^Hi, thank you for purchasing Liqunch Pro\./);
   assert.match(String(requestBody?.text_body), /\n中文补充\n/);
   assert.match(String(requestBody?.html_body), /support@example\.com/);
 });
@@ -204,7 +204,7 @@ test("does not fail the flow when SMTP2GO delivery fails", async (t) => {
     {
       SMTP2GO_API_KEY: "smtp2go_test_key",
       EMAIL_FROM_ADDRESS: "licenses@example.com",
-      EMAIL_FROM_NAME: "oLauncher",
+      EMAIL_FROM_NAME: "Liqunch",
       EMAIL_REPLY_TO: "help@example.com",
       SUPPORT_EMAIL: "support@example.com"
     } as never,
@@ -228,7 +228,7 @@ test("skips email delivery when mailer configuration is incomplete", async () =>
     {
       SMTP2GO_API_KEY: "",
       EMAIL_FROM_ADDRESS: "licenses@example.com",
-      EMAIL_FROM_NAME: "oLauncher",
+      EMAIL_FROM_NAME: "Liqunch",
       EMAIL_REPLY_TO: "help@example.com",
       SUPPORT_EMAIL: "support@example.com"
     } as never,

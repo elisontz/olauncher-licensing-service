@@ -1,14 +1,14 @@
-# oLauncher Licensing Service
+# Liqunch Licensing Service
 
 Minimal Cloudflare Workers + D1 service for `email + license` activation.
 
 Production endpoint:
 
-- [https://olauncher-licensing-service.elisonyang2024.workers.dev](https://olauncher-licensing-service.elisonyang2024.workers.dev)
+- [https://liqunch-licensing-service.elisonyang2024.workers.dev](https://liqunch-licensing-service.elisonyang2024.workers.dev)
 
 Health check:
 
-- [https://olauncher-licensing-service.elisonyang2024.workers.dev/health](https://olauncher-licensing-service.elisonyang2024.workers.dev/health)
+- [https://liqunch-licensing-service.elisonyang2024.workers.dev/health](https://liqunch-licensing-service.elisonyang2024.workers.dev/health)
 
 ## Scope
 
@@ -22,8 +22,8 @@ This repository contains the standalone licensing backend only. It is responsibl
 
 Related repositories:
 
-- App: [`oLauncher`](https://github.com/elisontz/oLauncher)
-- Website: [`olauncher-web`](https://github.com/elisontz/olauncher-web)
+- App: [`Liqunch`](https://github.com/elisontz/Liqunch)
+- Website: [`liqunch-web`](https://github.com/elisontz/liqunch-web)
 
 ## Endpoints
 
@@ -41,16 +41,16 @@ Related repositories:
    ```
 2. Create a D1 database:
    ```bash
-   npx wrangler d1 create olauncher-licenses
+   npx wrangler d1 create liqunch-licenses
    ```
 3. Replace `database_id` in [`wrangler.toml`](./wrangler.toml).
 4. Apply the initial schema locally if needed:
    ```bash
-   npx wrangler d1 execute olauncher-licenses --file=./migrations/0001_initial.sql
+   npx wrangler d1 execute liqunch-licenses --file=./migrations/0001_initial.sql
    ```
 5. Apply the schema to the remote database:
    ```bash
-   npx wrangler d1 execute olauncher-licenses --remote --file=./migrations/0001_initial.sql
+   npx wrangler d1 execute liqunch-licenses --remote --file=./migrations/0001_initial.sql
    ```
 6. Run the local dev server:
    ```bash
@@ -83,7 +83,7 @@ Set these values in [`wrangler.toml`](./wrangler.toml) or through Wrangler secre
 
 Current webhook destination:
 
-- `https://olauncher-licensing-service.elisonyang2024.workers.dev/api/paddle/webhooks`
+- `https://liqunch-licensing-service.elisonyang2024.workers.dev/api/paddle/webhooks`
 
 The current event set is:
 

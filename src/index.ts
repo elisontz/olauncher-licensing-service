@@ -439,14 +439,14 @@ export function buildLicensePurchaseEmail({
   const planNameEn = planCode === "double" ? "Double-device lifetime plan" : "Single-device lifetime plan";
 
   const text = [
-    "Hi, thank you for purchasing oLauncher Pro.",
+    "Hi, thank you for purchasing Liqunch Pro.",
     "",
     `Purchase email: ${to}`,
     `License key: ${licenseKey}`,
     `Plan: ${planNameEn}`,
     "",
     "Activation steps:",
-    "1. Open the oLauncher app",
+    "1. Open the Liqunch app",
     "2. Go to the Pro tab",
     "3. Enter your purchase email and license key to activate",
     "",
@@ -457,14 +457,14 @@ export function buildLicensePurchaseEmail({
     "",
     "中文补充",
     "",
-    "你好，感谢你购买 oLauncher Pro。",
+    "你好，感谢你购买 Liqunch Pro。",
     "",
     `购买邮箱：${to}`,
     `激活码：${licenseKey}`,
     `套餐：${planNameZh}`,
     "",
     "激活步骤：",
-    "1. 打开 oLauncher App",
+    "1. 打开 Liqunch App",
     "2. 进入 Pro 页面",
     "3. 输入购买邮箱和激活码完成激活",
     "",
@@ -474,14 +474,14 @@ export function buildLicensePurchaseEmail({
 
   const html = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #111827;">
-      <h2>Your oLauncher Pro License Key</h2>
-      <p>Hi, thank you for purchasing oLauncher Pro.</p>
+      <h2>Your Liqunch Pro License Key</h2>
+      <p>Hi, thank you for purchasing Liqunch Pro.</p>
       <p><strong>Purchase email:</strong> ${escapeHtml(to)}</p>
       <p><strong>License key:</strong> <code style="font-size: 16px;">${escapeHtml(licenseKey)}</code></p>
       <p><strong>Plan:</strong> ${escapeHtml(planNameEn)}</p>
       <h3>Activation steps</h3>
       <ol>
-        <li>Open the oLauncher app</li>
+        <li>Open the Liqunch app</li>
         <li>Go to the Pro tab</li>
         <li>Enter your purchase email and license key to activate</li>
       </ol>
@@ -489,13 +489,13 @@ export function buildLicensePurchaseEmail({
       <p>Please keep this email for future activation or device changes.</p>
       <hr style="margin: 32px 0; border: 0; border-top: 1px solid #e5e7eb;" />
       <h3>Chinese Summary</h3>
-      <p>你好，感谢你购买 oLauncher Pro。</p>
+      <p>你好，感谢你购买 Liqunch Pro。</p>
       <p><strong>购买邮箱：</strong> ${escapeHtml(to)}</p>
       <p><strong>激活码：</strong> <code style="font-size: 16px;">${escapeHtml(licenseKey)}</code></p>
       <p><strong>套餐：</strong> ${escapeHtml(planNameZh)}</p>
       <h4>激活步骤</h4>
       <ol>
-        <li>打开 oLauncher App</li>
+        <li>打开 Liqunch App</li>
         <li>进入 Pro 页面</li>
         <li>输入购买邮箱和激活码完成激活</li>
       </ol>
@@ -505,7 +505,7 @@ export function buildLicensePurchaseEmail({
   `.trim();
 
   return {
-    subject: "Your oLauncher Pro License Key / oLauncher Pro 激活码",
+    subject: "Your Liqunch Pro License Key / Liqunch Pro 激活码",
     text,
     html
   };
