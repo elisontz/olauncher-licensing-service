@@ -122,8 +122,8 @@ async function createLicenseFromWebhook(env: Env, payload: Record<string, unknow
     // Insert license
     await env.DB
       .prepare(`
-        INSERT INTO licenses (id, email, license_key, plan_code, max_seats, status, paddle_transaction_id, created_at, updated_at)
-        VALUES (?, ?, ?, ?, ?, 'active', ?, ?, ?)
+        INSERT INTO licenses (id, email, license_key, plan_code, max_seats, status, source, paddle_transaction_id, created_at, updated_at)
+        VALUES (?, ?, ?, ?, ?, 'active', 'paddle', ?, ?, ?)
       `)
       .bind(
         crypto.randomUUID(),
